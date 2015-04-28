@@ -55,13 +55,7 @@
                             <constraint firstItem="7jZ-Oe-uuY" firstAttribute="leading" secondItem="8I6-do-OJY" secondAttribute="leadingMargin" id="xVX-ge-Tdv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Colors" id="4b8-Ez-evB">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="n12-Lo-LSm">
-                            <connections>
-                                <action selector="refresh:" destination="ax0-WZ-lTZ" id="GMA-ol-Ihh"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Colors" id="4b8-Ez-evB"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="connectionsLabel" destination="7jZ-Oe-uuY" id="SVy-L4-G9S"/>
