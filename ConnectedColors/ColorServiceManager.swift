@@ -9,12 +9,20 @@
 import Foundation
 import MultipeerConnectivity
 
+protocol ColorServiceManagerDelegate {
+    
+    func connectedDevicesChanged(manager : ColorServiceManager, connectedDevices: [String])
+    func colorChanged(manager : ColorServiceManager, colorString: String)
+    
+}
+
 class ColorServiceManager : NSObject {
     
     private let ColorServiceType = "example-color"
     private let myPeerId = MCPeerID(displayName: UIDevice.currentDevice().name)
     private let serviceAdvertiser : MCNearbyServiceAdvertiser
     private let serviceBrowser : MCNearbyServiceBrowser
+    var delegate : ColorServiceManagerDelegate?
     
     override init() {
         self.serviceAdvertiser = MCNearbyServiceAdvertiser(peer: myPeerId, discoveryInfo: nil, serviceType: ColorServiceType)
@@ -40,6 +48,18 @@ class ColorServiceManager : NSObject {
         session?.delegate = self
         return session
     }()
+
+    func sendColor(colorName : String) {
+        NSLog("%@", "sendColor: \(colorName)")
+        
+        if session.connectedPeers.count > 0 {
+            var error : NSError?
+            if !self.session.sendData(colorName.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false), toPeers: session.connectedPeers, withMode: MCSessionSendDataMode.Reliable, error: &error) {
+                NSLog("%@", "\(error)")
+            }
+        }
+
+    }
     
 }
 
@@ -92,10 +112,13 @@ extension ColorServiceManager : MCSessionDelegate {
     
     func session(session: MCSession!, peer peerID: MCPeerID!, didChangeState state: MCSessionState) {
         NSLog("%@", "peer \(peerID) didChangeState: \(state.stringValue())")
+        self.delegate?.connectedDevicesChanged(self, connectedDevices: session.connectedPeers.map({$0.displayName}))
     }
     
     func session(session: MCSession!, didReceiveData data: NSData!, fromPeer peerID: MCPeerID!) {
-        NSLog("%@", "didReceiveData: \(data)")
+        NSLog("%@", "didReceiveData: \(data.length) bytes")
+        let str = NSString(data: data, encoding: NSUTF8StringEncoding) as! String
+        self.delegate?.colorChanged(self, colorString: str)
     }
     
     func session(session: MCSession!, didReceiveStream stream: NSInputStream!, withName streamName: String!, fromPeer peerID: MCPeerID!) {
