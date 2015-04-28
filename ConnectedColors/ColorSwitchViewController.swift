@@ -12,6 +12,8 @@ class ColorSwitchViewController: UIViewController {
 
     @IBOutlet weak var connectionsLabel: UILabel!
     
+    let colorService = ColorServiceManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,6 +23,6 @@ class ColorSwitchViewController: UIViewController {
     
     @IBAction func yellowTapped(sender: AnyObject) {
     }
-
+    
 }
 
