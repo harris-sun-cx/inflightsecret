@@ -16,22 +16,32 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-tD-EXe">
-                    <rect key="frame" x="0.0" y="628" width="376" height="39"/>
-                    <color key="backgroundColor" red="0.6437732343" green="0.88738331400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                </button>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZb-gx-Nrn">
-                    <rect key="frame" x="91" y="472" width="192" height="44"/>
-                    <state key="normal" title="Cancel"/>
-                    <connections>
-                        <action selector="cancelButtonDidClicked" destination="-1" eventType="touchUpInside" id="Zry-yz-Ujx"/>
-                    </connections>
-                </button>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mobileapp_requesting.png" translatesAutoresizingMaskIntoConstraints="NO" id="2p1-fx-e1G">
                     <rect key="frame" x="-1" y="-291" width="376" height="1250"/>
                 </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZb-gx-Nrn">
+                    <rect key="frame" x="91" y="472" width="192" height="44"/>
+                    <connections>
+                        <action selector="cancelButtonDidClicked" destination="-1" eventType="touchUpInside" id="9kk-rF-I3z"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-tD-EXe">
+                    <rect key="frame" x="0.0" y="622" width="376" height="45"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="45" id="guX-jR-hY2"/>
+                    </constraints>
+                    <state key="normal" title="Rate"/>
+                    <connections>
+                        <action selector="ratingButtonDidClicked" destination="-1" eventType="touchUpInside" id="SId-Zv-LnB"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sGc-tD-EXe" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="1Js-4K-2BT"/>
+                <constraint firstAttribute="bottom" secondItem="sGc-tD-EXe" secondAttribute="bottom" id="FY0-f0-zPD"/>
+                <constraint firstItem="sGc-tD-EXe" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Fgc-j5-tv6"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <nil key="simulatedTopBarMetrics"/>
             <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>

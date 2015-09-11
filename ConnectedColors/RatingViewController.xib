@@ -18,21 +18,20 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mobileapp_rating.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="1Jl-dD-XEP">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                 </imageView>
-                <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3q-gd-eBc">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W3q-gd-eBc">
                     <rect key="frame" x="84" y="357" width="104" height="100"/>
-                    <color key="backgroundColor" red="0.54451879199999997" green="0.84090909089999999" blue="0.3839192844" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Disgust">
+                    <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNZ-n6-QmG">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FNZ-n6-QmG">
                     <rect key="frame" x="94" y="470" width="186" height="49"/>
-                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="doneButtonDidClicked:" destination="-1" eventType="touchUpInside" id="1Y5-tZ-N6U"/>
+                    </connections>
                 </button>
-                <button hidden="YES" opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzs-o7-Y0w">
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xzs-o7-Y0w">
                     <rect key="frame" x="189" y="357" width="100" height="100"/>
-                    <color key="backgroundColor" red="1" green="0.93294025229999999" blue="0.045257589940000002" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Joy ^_^"/>
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

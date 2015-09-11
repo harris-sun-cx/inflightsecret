@@ -51,29 +51,47 @@ class ColorSwitchViewController: UIViewController {
 //    }
     
     @IBAction func actionTapped(sender: AnyObject){
-        let pendingWaterViewController = PendingWaterViewController(nibName: "PendingWaterViewController", bundle: nil)
+
         var intent:String?
         let btn = sender as? UIButton;
         
         if (btn!.tag == 1){
             intent = "water";
+            showSnackRequestViewController(intent!);
         }else if (btn!.tag == 2){
             intent = "snack";
+            showSnackRequestViewController(intent!);
         }else if (btn!.tag == 3){
             intent = "blanket";
+            showSnackRequestViewController(intent!);
         }else if (btn!.tag == 4){
             intent = "pillow";
+            showSnackRequestViewController(intent!);
         }else if (btn!.tag == 5){
             intent = "message"
+            showSnackRequestViewController(intent!);
         }else {
             intent = "feedback"
+            showFeedbackViewController();
         }
 
+
+    }
+    
+    func showSnackRequestViewController(aIntent: String){
+        let pendingWaterViewController = PendingWaterViewController(nibName: "PendingWaterViewController", bundle: nil)
+        
         pendingWaterViewController.colorService = colorService;
-        pendingWaterViewController.intent = intent;
+        pendingWaterViewController.intent = aIntent;
         
         navigationController?.pushViewController(pendingWaterViewController, animated: true);
 
+    }
+    
+    func showFeedbackViewController(){
+        let feedbackViewController = FeedbackViewController(nibName: "FeedbackViewController", bundle: nil)
+        
+        navigationController?.pushViewController(feedbackViewController, animated: true)
     }
     
 //    @IBAction func happyTapped(sender: AnyObject){
@@ -120,7 +138,9 @@ extension ColorSwitchViewController : ColorServiceManagerDelegate {
     
     func connectedDevicesChanged(manager: ColorServiceManager, connectedDevices: [String]) {
         NSOperationQueue.mainQueue().addOperationWithBlock { () -> Void in
+//            self.connectionsLabel.text = "Connections: \(connectedDevices)"
             self.connectionsLabel.text = "Connections: \(connectedDevices)"
+            
         }
     }
     
