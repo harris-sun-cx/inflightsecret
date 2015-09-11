@@ -12,6 +12,12 @@ class ColorSwitchViewController: UIViewController {
 
     @IBOutlet weak var connectionsLabel: UILabel!
     @IBOutlet weak var imageview: UIImageView!
+    @IBOutlet weak var btnWater: UIButton!
+    @IBOutlet weak var btnSnack: UIButton!
+    @IBOutlet weak var btnPillow: UIButton!
+    @IBOutlet weak var btnFeedback: UIButton!
+    @IBOutlet weak var btnMessage: UIButton!
+    @IBOutlet weak var btnBlanket: UIButton!
     
     let colorService = ColorServiceManager()
     
@@ -20,15 +26,15 @@ class ColorSwitchViewController: UIViewController {
         colorService.delegate = self
     }
 
-    @IBAction func redTapped(sender: AnyObject) {
-        self.changeColor(UIColor.redColor())
-        colorService.sendColor("red")
-    }
-    
-    @IBAction func yellowTapped(sender: AnyObject) {
-        self.changeColor(UIColor.yellowColor())
-        colorService.sendColor("yellow")
-    }
+//    @IBAction func redTapped(sender: AnyObject) {
+//        self.changeColor(UIColor.redColor())
+//        colorService.sendColor("red")
+//    }
+//    
+//    @IBAction func yellowTapped(sender: AnyObject) {
+//        self.changeColor(UIColor.yellowColor())
+//        colorService.sendColor("yellow")
+//    }
     
     func changeColor(color : UIColor) {
         UIView.animateWithDuration(0.2) {
@@ -36,30 +42,49 @@ class ColorSwitchViewController: UIViewController {
         }
     }
     
-    @IBAction func waterTapper(sender: AnyObject){
-        
-        let pendingWaterViewController = PendingWaterViewController(nibName: "PendingWaterViewController", bundle: nil)
-        pendingWaterViewController.colorService = colorService;
-        navigationController?.pushViewController(pendingWaterViewController, animated: true);
-        
-    }
+//    @IBAction func waterTapper(sender: AnyObject){
+//        
+//        let pendingWaterViewController = PendingWaterViewController(nibName: "PendingWaterViewController", bundle: nil)
+//        pendingWaterViewController.colorService = colorService;
+//        navigationController?.pushViewController(pendingWaterViewController, animated: true);
+//        
+//    }
     
-    @IBAction func snackTapped(sender: AnyObject){
+    @IBAction func actionTapped(sender: AnyObject){
         let pendingWaterViewController = PendingWaterViewController(nibName: "PendingWaterViewController", bundle: nil)
+        var intent:String?
+        let btn = sender as? UIButton;
+        
+        if (btn!.tag == 1){
+            intent = "water";
+        }else if (btn!.tag == 2){
+            intent = "snack";
+        }else if (btn!.tag == 3){
+            intent = "blanket";
+        }else if (btn!.tag == 4){
+            intent = "pillow";
+        }else if (btn!.tag == 5){
+            intent = "message"
+        }else {
+            intent = "feedback"
+        }
+
         pendingWaterViewController.colorService = colorService;
+        pendingWaterViewController.intent = intent;
+        
         navigationController?.pushViewController(pendingWaterViewController, animated: true);
 
     }
     
-    @IBAction func happyTapped(sender: AnyObject){
-        let emotion : String = "joy";
-        colorService.sendRequest(emotion)
-    }
-
-    @IBAction func disgustTapped(sender: AnyObject){
-        let emotion : String = "disgust";
-        colorService.sendRequest(emotion)
-    }
+//    @IBAction func happyTapped(sender: AnyObject){
+//        let emotion : String = "joy";
+//        colorService.sendRequest(emotion)
+//    }
+//
+//    @IBAction func disgustTapped(sender: AnyObject){
+//        let emotion : String = "disgust";
+//        colorService.sendRequest(emotion)
+//    }
     
     func showWater(title : String){
         print(title);
@@ -86,6 +111,7 @@ class ColorSwitchViewController: UIViewController {
         view.addSubview(imageView)
         
     }
+
 
     
 }

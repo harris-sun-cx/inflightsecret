@@ -21,25 +21,8 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="request_for_services.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8D8-DR-QSP">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-lY-h3a">
-                                <rect key="frame" x="188" y="105" width="167" height="148"/>
-                                <color key="backgroundColor" red="1" green="0.94064141639999999" blue="0.91024523030000004" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Snack" backgroundImage="b_pillow.jpg">
-                                    <color key="titleColor" red="0.4166863952" green="0.2212873742" blue="0.2507122215" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="waterTapper:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="GjQ-sO-O3V"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Connections:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jZ-Oe-uuY">
-                                <rect key="frame" x="12" y="59" width="343" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LZM-ef-idG">
-                                <rect key="frame" x="260" y="522" width="100" height="100"/>
+                                <rect key="frame" x="275" y="567" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.5445187920261032" green="0.84090909090909094" blue="0.38391928439040124" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Disgust">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -48,62 +31,86 @@
                                     <action selector="disgustTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="MO0-py-Av2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-JT-vaL">
-                                <rect key="frame" x="188" y="284" width="167" height="148"/>
-                                <color key="backgroundColor" red="1" green="0.94064141644211041" blue="0.91024523029043414" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Pillow" backgroundImage="b_pillow.jpg">
-                                    <color key="titleColor" red="0.41668639520202022" green="0.22128737417943545" blue="0.25071222154810652" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="waterTapper:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="1eb-AA-W2n"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="feeling: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HHA-nE-A8I">
                                 <rect key="frame" x="15" y="539" width="61" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4f-Kg-hIJ">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aeS-lY-h3a" userLabel="BtnSnack">
+                                <rect key="frame" x="188" y="105" width="167" height="148"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.4166863952" green="0.2212873742" blue="0.2507122215" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="c1M-Lz-h8g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0zf-yS-4Wr" userLabel="BtnBlanket">
+                                <rect key="frame" x="15" y="289" width="167" height="148"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.4166863952" green="0.2212873742" blue="0.2507122215" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="WiE-NT-s7U"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YH7-JT-vaL" userLabel="BtnPillow">
+                                <rect key="frame" x="188" y="284" width="167" height="148"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.41668639520202022" green="0.22128737417943545" blue="0.25071222154810652" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="UMc-RL-Nla"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v4f-Kg-hIJ">
                                 <rect key="frame" x="45" y="500" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.30619847581549137" green="0.1076542201655574" blue="0.46719144570707072" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Message">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="waterTapper:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="8GM-Jf-LqA"/>
+                                    <action selector="actionTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="W6b-X4-WAC"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCM-Cf-kIn">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCM-Cf-kIn">
                                 <rect key="frame" x="230" y="500" width="100" height="100"/>
                                 <color key="backgroundColor" red="0.32430968818285322" green="0.60939554676152563" blue="0.83587831439393945" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Feedback">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="waterTapper:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="tXw-Y4-Kie"/>
+                                    <action selector="actionTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="ivp-Sv-XVZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h82-vg-XgW" userLabel="BtnWater">
+                                <rect key="frame" x="12" y="104" width="172" height="149"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.24791155848480739" green="0.46579433607735787" blue="0.63890861742424243" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="luu-gc-8U6"/>
                                 </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fiv-3f-yLQ">
-                                <rect key="frame" x="12" y="522" width="100" height="100"/>
+                                <rect key="frame" x="0.0" y="568" width="100" height="100"/>
                                 <color key="backgroundColor" red="1" green="0.93294025231536915" blue="0.045257589944931564" alpha="1" colorSpace="calibratedRGB"/>
                                 <state key="normal" title="Joy ^_^"/>
                                 <connections>
                                     <action selector="happyTapped:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="bXS-y6-M1l"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" alpha="0.0" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h82-vg-XgW">
-                                <rect key="frame" x="12" y="104" width="172" height="149"/>
-                                <color key="backgroundColor" red="0.72631578638486061" green="1" blue="0.99996073480007641" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="Water" backgroundImage="b_water.jpg">
-                                    <color key="titleColor" red="0.24791155848480739" green="0.46579433607735787" blue="0.63890861742424243" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="waterTapper:" destination="ax0-WZ-lTZ" eventType="touchUpInside" id="4fQ-5Q-aGh"/>
-                                </connections>
-                            </button>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Connections:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jZ-Oe-uuY">
+                                <rect key="frame" x="12" y="59" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -117,6 +124,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="btnBlanket" destination="0zf-yS-4Wr" id="Bkb-c9-AGh"/>
+                        <outlet property="btnFeedback" destination="ZCM-Cf-kIn" id="kFH-6Y-zid"/>
+                        <outlet property="btnMessage" destination="v4f-Kg-hIJ" id="H2g-is-aj6"/>
+                        <outlet property="btnPillow" destination="YH7-JT-vaL" id="Nnh-qj-hxx"/>
+                        <outlet property="btnSnack" destination="aeS-lY-h3a" id="zt9-4g-qqz"/>
+                        <outlet property="btnWater" destination="h82-vg-XgW" id="HJX-hD-w4p"/>
                         <outlet property="connectionsLabel" destination="7jZ-Oe-uuY" id="SVy-L4-G9S"/>
                     </connections>
                 </viewController>
@@ -145,8 +158,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="b_pillow.jpg" width="480" height="333"/>
-        <image name="b_water.jpg" width="300" height="360"/>
         <image name="request_for_services.jpg" width="750" height="1152"/>
     </resources>
 </document>

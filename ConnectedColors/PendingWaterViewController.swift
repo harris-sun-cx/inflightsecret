@@ -13,36 +13,36 @@ class PendingWaterViewController: UIViewController {
     @IBOutlet weak var btnCancel: UIButton!
     
     weak var colorService: ColorServiceManager?
+    var intent:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
         NSLog("%@", "pending water view controller");
         navigationController?.navigationBarHidden = true;
         
-        let intent : String = "water";
-        colorService?.sendRequest(intent);
-    }
+        colorService?.sendRequest(self.intent!)
 
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     @IBAction func cancelButtonDidClicked(){
+        print("cancel button clicked")
         navigationController?.popViewControllerAnimated(true);
         navigationController?.navigationBarHidden = false;
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func ratingButtonDidClicked(){
+        let ratingViewController = RatingViewController(nibName: "RatingViewController", bundle: nil)
+        ratingViewController.colorService = colorService;
+        navigationController?.pushViewController(ratingViewController, animated: true);
     }
-    */
+
 
 }
