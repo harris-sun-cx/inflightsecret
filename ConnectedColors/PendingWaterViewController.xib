@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8187.4" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PendingWaterViewController" customModule="ConnectedColors" customModuleProvider="target">
+            <connections>
+                <outlet property="btnCancel" destination="XZb-gx-Nrn" id="KIC-w4-9ea"/>
+                <outlet property="view" destination="iN0-l3-epB" id="44y-c8-eox"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9gQ-MU-WZT">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZb-gx-Nrn">
+                            <rect key="frame" x="95" y="476" width="192" height="44"/>
+                            <state key="normal" title="Cancel"/>
+                            <connections>
+                                <action selector="cancelButtonDidClicked" destination="-1" eventType="touchUpInside" id="Zry-yz-Ujx"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="mobileapp_requesting.png" translatesAutoresizingMaskIntoConstraints="NO" id="2p1-fx-e1G">
+                    <rect key="frame" x="0.0" y="0.0" width="376" height="1250"/>
+                </imageView>
+                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGc-tD-EXe">
+                    <rect key="frame" x="0.0" y="628" width="376" height="39"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="9gQ-MU-WZT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Wuk-qq-Y6y"/>
+                <constraint firstAttribute="trailing" secondItem="9gQ-MU-WZT" secondAttribute="trailing" constant="55" id="eqS-B9-CEK"/>
+                <constraint firstItem="9gQ-MU-WZT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="ngy-bl-RLi"/>
+                <constraint firstAttribute="trailing" secondItem="9gQ-MU-WZT" secondAttribute="trailing" id="sz7-mL-Cxi"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="eqS-B9-CEK"/>
+                    <exclude reference="sz7-mL-Cxi"/>
+                </mask>
+            </variation>
+            <point key="canvasLocation" x="579.5" y="444.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mobileapp_requesting.png" width="750" height="2500"/>
+    </resources>
+</document>
